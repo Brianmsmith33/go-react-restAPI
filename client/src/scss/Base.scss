@@ -1,0 +1,864 @@
+@import 'colors';
+@import 'utilities';
+
+/* Page Elements*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Aileron', sans-serif;
+	font-size: 1rem;
+	letter-spacing: 3px;
+	line-height: 1.6;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+
+a {
+	color: $primary-color;
+	text-decoration: none;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+.table th,
+.table td {
+	padding: 1rem;
+	text-align: left;
+}
+
+.table th {
+	background: $light-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+label {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Opera and Firefox */
+}
+
+.badge {
+	font-size: 0.8rem;
+	padding: 0.1rem;
+	text-align: center;
+	margin: 0.3rem;
+	background: $light-color;
+	color: #333;
+}
+
+.alert {
+	width: 50%;
+	z-index: 150;
+	padding: 0.8rem;
+	margin: auto;
+	opacity: 0.9;
+	background: $light-color;
+	color: #333;
+	position: fixed;
+	top: 100px;
+	left: 25%;
+}
+
+.btn {
+	display: inline-block;
+	background: $light-color;
+	color: $dark-color;
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	border: none;
+	margin-right: 0.5rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+}
+
+.round-img {
+	border-radius: 50%;
+	max-height: 300px;
+}
+
+.line {
+	height: 2px;
+	background: $light-color;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10000;
+	opacity: 0.95;
+}
+
+
+
+/*Form Elements*/
+.form .form-group {
+	margin: 1.2rem 0;
+}
+
+.form .form-text {
+	margin-top: 0.3rem;
+	color: #888;
+}
+
+.form input[type='tel'],
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='date'],
+.form select,
+.form textarea {
+	display: block;
+	width: 100%;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	border: 1px solid $light-color;
+	resize: none;
+}
+.form input[type='checkbox'] {
+	height: 25px;
+	outline: none;
+}
+
+.file-label {
+	width: 50px;
+}
+
+[type='file'] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	white-space: nowrap;
+	width: 1px;
+}
+
+[type='file'] + label {
+	color: $white-color;
+	cursor: pointer;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+
+[type='file'] + label:hover {
+	color: $primary-color;
+}
+
+.filename {
+	font-size: 16px;
+	color: $blue-color;
+}
+
+.file-icon {
+	font-size: 50px;
+	color: $blue-color;
+	margin-right: 10px;
+}
+
+.file-icon:hover {
+	cursor: pointer;
+}
+
+.form input[type='submit'],
+button {
+	font: inherit;
+}
+
+.form .social-input {
+	display: flex;
+}
+
+.form .social-input i {
+	padding: 0.5rem;
+	width: 4rem;
+}
+
+.form .social-input i.fa-twitter {
+	color: $twitter-color;
+}
+.form .social-input i.fa-facebook {
+	color: $facebook-color;
+}
+.form .social-input i.fa-instagram {
+	color: $instagram-color;
+}
+.form .social-input i.fa-youtube {
+	color: $youtube-color;
+}
+.form .social-input i.fa-linkedin {
+	color: $linkedin-color;
+}
+
+/*Colored Elements*/
+.text-blue {
+	color: $blue-color;
+}
+
+.text-light-blue {
+	color: $light-blue-color;
+}
+
+.text-tan {
+	color: $tan-color;
+}
+
+.text-indigo {
+	color: $indigo-color;
+}
+
+.text-purple {
+	color: $purple-color;
+}
+
+.text-pink {
+	color: $pink-color;
+}
+
+.text-red {
+	color: $red-color;
+}
+
+.text-orange {
+	color: $orange-color;
+}
+
+.text-yellow {
+	color: $yellow-color;
+}
+
+.text-green {
+	color: $green-color;
+}
+
+.text-teal {
+	color: $teal-color;
+}
+
+.text-cyan {
+	color: $cyan-color;
+}
+
+.text-gray {
+	color: $gray-color;
+}
+
+.text-light {
+	color: $light-color;
+}
+
+.text-black {
+	color: $black-color;
+}
+
+.text-dark {
+	color: $dark-color;
+}
+
+.text-primary {
+	color: $primary-color;
+}
+
+.btn-blue,
+.bg-blue,
+.badge-blue,
+.alert-blue {
+	background: $blue-color;
+	@include get-color($blue-color);
+}
+
+.btn-light-blue,
+.bg-light-blue,
+.badge-light-blue,
+.alert-light-blue {
+	background: $light-blue-color;
+	@include get-color($light-blue-color);
+}
+
+.btn-indigo,
+.bg-indigo,
+.badge-indigo,
+.alert-indigo {
+	background: $indigo-color;
+	@include get-color($indigo-color);
+}
+
+.btn-purple,
+.bg-purple,
+.badge-purple,
+.alert-purple {
+	background: $purple-color;
+	@include get-color($purple-color);
+}
+
+.btn-pink,
+.bg-pink,
+.badge-pink,
+.alert-pink {
+	background: $pink-color;
+	@include get-color($pink-color);
+}
+
+.btn-red,
+.bg-red,
+.badge-red,
+.alert-red {
+	background: $red-color;
+	@include get-color($red-color);
+}
+
+.btn-orange,
+.bg-orange,
+.badge-orange,
+.alert-orange {
+	background: $orange-color;
+	@include get-color($orange-color);
+}
+
+.btn-yellow,
+.bg-yellow,
+.badge-yellow,
+.alert-yellow {
+	background: $yellow-color;
+	@include get-color($yellow-color);
+}
+
+.btn-green,
+.bg-green,
+.badge-green,
+.alert-green {
+	background:$green-color;
+	@include get-color($green-color);
+}
+
+.btn-teal,
+.bg-teal,
+.badge-teal,
+.alert-teal {
+	background: $teal-color;
+	@include get-color($teal-color);
+}
+
+.btn-tan,
+.bg-tan,
+.badge-tan,
+.alert-tan {
+	background: $tan-color;
+	@include get-color($tan-color);
+}
+
+.btn-cyan,
+.bg-cyan,
+.badge-cyan,
+.alert-cyan {
+	background: $cyan-color;
+	@include get-color($cyan-color);
+}
+
+.btn-white,
+.bg-white,
+.badge-white,
+.alert-white {
+	background: $white-color;
+	@include get-color($white-color);
+}
+
+.btn-gray,
+.bg-gray,
+.badge-gray,
+.alert-gray {
+	background: $gray-color;
+	@include get-color($gray-color);
+}
+
+.btn-gray-dark,
+.bg-gray-dark,
+.badge-gray-dark,
+.alert-gray-dark {
+	background: $gray-dark-color;
+	@include get-color($gray-dark-color);
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+	background: $light-color;
+	@include get-color($light-color);
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+	background: $dark-color;
+	@include get-color($dark-color);
+}
+
+.btn-black,
+.bg-black,
+.badge-black,
+.alert-black {
+	background: $black-color;
+	@include get-color($black-color);
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+	background: $primary-color;
+	@include get-color($primary-color);
+}
+
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+	background: $danger-color;
+	@include get-color($danger-color);
+}
+
+.btn-success,
+.bg-success,
+.badge-success,
+.alert-success {
+	background: $success-color;
+	@include get-color($success-color);
+}
+
+.bg-light,
+.badge-light {
+	border: 1px solid $light-color;
+}
+
+.border-blue {
+	border-color: $blue-color;
+}
+
+.border-light-blue {
+	border-color: $light-blue-color;
+}
+
+.border-tan {
+	border-color: $tan-color;
+}
+
+.border-indigo {
+	border-color: $indigo-color;
+}
+
+.border-purple {
+	border-color: $purple-color;
+}
+
+.border-pink {
+	border-color: $pink-color;
+}
+
+.border-red {
+	border-color: $red-color;
+}
+
+.border-orange {
+	border-color: $orange-color;
+}
+
+.border-yellow {
+	border-color: $yellow-color;
+}
+
+.border-green {
+	border-color: $green-color;
+}
+
+.border-teal {
+	border-color: $teal-color;
+}
+
+.border-cyan {
+	border-color: $cyan-color;
+}
+
+.border-gray {
+	border-color: $gray-color;
+}
+
+.border-light {
+	border-color: $light-color;
+}
+
+.border-black {
+	border-color: $black-color;
+}
+
+.border-dark {
+	border-color: $dark-color;
+}
+
+.border-primary {
+	border-color: $primary-color;
+}
+
+/* Padding */
+.p-0 {
+	padding: 0;
+}
+.p {
+	padding: 0.5rem;
+}
+.p-1 {
+	padding: 1rem;
+}
+.p-2 {
+	padding: 2rem;
+}
+.p-3 {
+	padding: 3rem;
+}
+.p-4 {
+	padding: 4rem;
+}
+.p-5 {
+	padding: 5rem;
+}
+
+.py {
+	padding: 0.5rem 0;
+}
+.py-1 {
+	padding: 1rem 0;
+}
+.py-2 {
+	padding: 2rem 0;
+}
+.py-3 {
+	padding: 3rem 0;
+}
+.py-4 {
+	padding: 4rem 0;
+}
+.py-5 {
+	padding: 5rem 0;
+}
+
+.px {
+	padding: 0 0.5rem;
+}
+.px-1 {
+	padding: 0 1rem;
+}
+.px-2 {
+	padding: 0 2rem;
+}
+.px-3 {
+	padding: 0 3rem;
+}
+.px-4 {
+	padding: 0 4rem;
+}
+.px-5 {
+	padding: 0 5rem;
+}
+
+.pt {
+	padding-top: 0.5rem;
+}
+.pt-1 {
+	padding-top: 1rem;
+}
+.pt-2 {
+	padding-top: 2rem;
+}
+.pt-3 {
+	padding-top: 3rem;
+}
+.pt-4 {
+	padding-top: 4rem;
+}
+.pt-5 {
+	padding-top: 5rem;
+}
+
+.pb {
+	padding-bottom: 0.5rem;
+}
+.pb-1 {
+	padding-bottom: 1rem;
+}
+.pb-2 {
+	padding-bottom: 2rem;
+}
+.pb-3 {
+	padding-bottom: 3rem;
+}
+.pb-4 {
+	padding-bottom: 4rem;
+}
+.pb-5 {
+	padding-bottom: 5rem;
+}
+
+.pl {
+	padding-left: 0.5rem;
+}
+.pl-1 {
+	padding-left: 1rem;
+}
+.pl-2 {
+	padding-left: 2rem;
+}
+.pl-3 {
+	padding-left: 3rem;
+}
+.pl-4 {
+	padding-left: 4rem;
+}
+.pl-5 {
+	padding-left: 5rem;
+}
+
+.pr {
+	padding-right: 0.5rem;
+}
+.pr-1 {
+	padding-right: 1rem;
+}
+.pr-2 {
+	padding-right: 2rem;
+}
+.pr-3 {
+	padding-right: 3rem;
+}
+.pr-4 {
+	padding-right: 4rem;
+}
+.pr-5 {
+	padding-right: 5rem;
+}
+
+/* Margin */
+.m-auto {
+	margin: auto;
+}
+.m-0 {
+	margin: 0;
+}
+.m {
+	margin: 0.5rem;
+}
+.m-1 {
+	margin: 1rem;
+}
+.m-2 {
+	margin: 2rem;
+}
+.m-3 {
+	margin: 3rem;
+}
+.m-4 {
+	margin: 3rem;
+}
+.m-5 {
+	margin: 3rem;
+}
+
+.my {
+	margin: 0.5rem 0;
+}
+.my-1 {
+	margin: 1rem 0;
+}
+.my-2 {
+	margin: 2rem 0;
+}
+.my-3 {
+	margin: 3rem 0;
+}
+.my-4 {
+	margin: 4rem 0;
+}
+.my-5 {
+	margin: 5rem 0;
+}
+
+.mx {
+	margin: 0 0.5rem;
+}
+.mx-1 {
+	margin: 0 1rem;
+}
+.mx-2 {
+	margin: 0 2rem;
+}
+.mx-3 {
+	margin: 0 3rem;
+}
+.mx-4 {
+	margin: 0 4rem;
+}
+.mx-5 {
+	margin: 0 5rem;
+}
+
+
+.mt {
+	margin-top: 0.5rem;
+}
+.mt-1 {
+	margin-top: 1rem;
+}
+.mt-2 {
+	margin-top: 2rem;
+}
+.mt-3 {
+	margin-top: 3rem;
+}
+.mt-4 {
+	margin-top: 4rem;
+}
+.mt-5 {
+	margin-top: 5rem;
+}
+
+.mb {
+	margin-bottom: 0.5rem;
+}
+.mb-1 {
+	margin-bottom: 1rem;
+}
+.mb-2 {
+	margin-bottom: 2rem;
+}
+.mb-3 {
+	margin-bottom: 3rem;
+}
+.mb-4 {
+	margin-bottom: 4rem;
+}
+.mb-5 {
+	margin-bottom: 5rem;
+}
+
+.ml {
+	margin-left: 0.5rem;
+}
+.ml-1 {
+	margin-left: 1rem;
+}
+.ml-2 {
+	margin-left: 2rem;
+}
+.ml-3 {
+	margin-left: 3rem;
+}
+.ml-4 {
+	margin-left: 4rem;
+}
+.ml-5 {
+	margin-left: 5rem;
+}
+
+.mr {
+	margin-right: 0.5rem;
+}
+.mr-1 {
+	margin-right: 1rem;
+}
+.mr-2 {
+	margin-right: 2rem;
+}
+.mr-3 {
+	margin-right: 3rem;
+}
+.mr-4 {
+	margin-right: 4rem;
+}
+.mr-5 {
+	margin-right: 5rem;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+	.container {
+		margin-top: 8rem;
+	}
+
+	.hide-sm {
+		display: none;
+	}
+
+	/* Text Styles */
+	.x-large {
+		font-size: 3rem;
+	}
+
+	.large {
+		font-size: 2rem;
+	}
+
+	.lead {
+		font-size: 1rem;
+	}
+}
+
+/*Misc Utils*/
+.opaque {
+	opacity: 1;
+}
+
+.semi-opaque {
+	opacity: 0.5;
+}
+
+.transparent {
+	opacity: 0;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.align-center {
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}

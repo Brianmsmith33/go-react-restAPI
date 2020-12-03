@@ -1,0 +1,9 @@
+@mixin get-color($color) {
+    @if lightness($color) > 40% {
+        color: $dark-color;
+        font-weight: bold;
+    }
+    @else {
+        color: $white-color
+    }
+}
